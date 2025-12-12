@@ -16,6 +16,27 @@ A clean, SOLID-based Laravel project for posts, comments, notifications, API aut
 
 ---
 
+## 📸 Screenshots
+   **Login Page**  
+        ![Login Page](screenshots/login.png)
+
+   **Register Page**  
+        ![Register Page](screenshots/register.png)  
+
+   **Main Page**  
+        ![Main Page](screenshots/mainpage.png)
+        
+   **Create Post**  
+        ![Create Post](screenshots/createpost.png)
+
+   **Post Actions And Comments**
+        ![Post Actions And Comments](screenshots/post.png)
+
+   **Edit Post**  
+        ![Edit Post](screenshots/editpost.png)
+
+    
+
 ## 📦 Installation
 
 
