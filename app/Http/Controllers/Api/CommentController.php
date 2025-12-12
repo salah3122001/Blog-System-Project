@@ -9,7 +9,7 @@ use App\Models\Post;
 use App\Services\Api\CommentService;
 use Illuminate\Http\Request;
 
-class CommentApiController extends Controller
+class CommentController extends Controller
 {
     protected $commentService;
 
@@ -31,7 +31,7 @@ class CommentApiController extends Controller
         return new CommentResource($comment);
     }
 
-    
+
     public function show(Comment $comment)
     {
         $comment = $this->commentService->show($comment);

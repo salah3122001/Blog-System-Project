@@ -14,7 +14,7 @@ class CommentService{
 
         $comment= Comment::create($data);
         $postAuthor=$post->user;
-        $postAuthor->notify(new NewCommentAdded($comment, $post));
+        $postAuthor->notify(new NewCommentAdded($post , $comment));
         return $comment;
     }
 

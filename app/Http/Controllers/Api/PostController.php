@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\PostResource;
+use App\Models\Post;
 use App\Services\Api\PostService;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,7 @@ class PostController extends Controller
     public function index()
     {
         $post = $this->postService->index();
-        return PostResource::collection($posts);
+        return PostResource::collection($post);
     }
 
     public function store(Request $request)
@@ -58,5 +59,5 @@ class PostController extends Controller
         $this->postService->delete($post);
         return response()->json(['message' => 'Post deleted']);
     }
-    
+
 }

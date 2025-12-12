@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CommentApiController;
+use App\Http\Controllers\Api\CommentController;
 use App\Http\Controllers\Api\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -9,7 +10,7 @@ Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
 
-Route::middleware('api:sanctum')->group(function () {
+Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
     Route::get('/posts', [PostController::class, 'index']);
@@ -18,10 +19,10 @@ Route::middleware('api:sanctum')->group(function () {
     Route::put('/posts/{post}', [PostController::class, 'update']);
     Route::delete('/posts/{post}', [PostController::class, 'destroy']);
 
-    Route::post('/posts/{post}/comments', [CommentApiController::class, 'store']);
-    Route::get('/comments/{comment}', [CommentApiController::class, 'show']);
-    Route::put('/comments/{comment}', [CommentApiController::class, 'update']);
-    Route::delete('/comments/{comment}', [CommentApiController::class, 'destroy']);
+    Route::post('/posts/{post}/comments', [CommentController::class, 'store']);
+    Route::get('/comments/{comment}', [CommentController::class, 'show']);
+    Route::put('/comments/{comment}', [CommentController::class, 'update']);
+    Route::delete('/comments/{comment}', [CommentController::class, 'destroy']);
 
-  
+
 });
